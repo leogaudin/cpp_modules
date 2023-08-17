@@ -1,12 +1,6 @@
 <div align="center">
 	<h1>🆙 CPP Modules</h1>
-	<p>Level up</p>
 </div>
-
-## 📖 Table of Contents
-<!--ts-->
-   * [LINKS](#links)
-<!--te-->
 
 ## Before reading
 
