@@ -13,6 +13,18 @@ DiamondTrap::~DiamondTrap()
 	std::cout << "DiamondTrap: Destructor called" << std::endl;
 }
 
+DiamondTrap::DiamondTrap(const DiamondTrap &diamondtrap)
+	: ClapTrap("default_clap_name"), FragTrap("default_frag_name"), ScavTrap("default_scav_name")
+{
+	std::cout << "DiamondTrap: Copy constructor called" << std::endl;
+}
+
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &diamondtrap)
+{
+	std::cout << "DiamondTrap: Copy assignment operator called" << std::endl;
+	return (*this);
+}
+
 void DiamondTrap::whoAmI()
 {
 	std::cout
