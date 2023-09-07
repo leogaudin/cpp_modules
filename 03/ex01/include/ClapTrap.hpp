@@ -24,7 +24,7 @@ class ClapTrap
 	void setEnergyPoints(int energyPoints);
 	void setAttackDamage(int attackDamage);
 
-  private:
+  protected:
 	std::string name;
 	int hitPoints;
 	int energyPoints;

@@ -3,7 +3,6 @@
 Dog::Dog(): Animal("dog")
 {
 	std::cout << "Dog: Default constructor called" << std::endl;
-	this->type = "dog";
 	this->brain = new Brain();
 }
 

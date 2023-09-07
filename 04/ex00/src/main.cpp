@@ -14,6 +14,10 @@ int	main(void)
 		i->makeSound(); //will output the cat sound!
 		j->makeSound();
 		meta->makeSound();
+
+		delete meta;
+		delete j;
+		delete i;
 	}
 	std::cout << std::endl;
 	std::cout << "Wrong way:" << std::endl;
@@ -23,6 +27,9 @@ int	main(void)
 		std::cout << i->getType() << " " << std::endl;
 		i->makeSound(); //will output the cat sound!
 		meta->makeSound();
+
+		delete meta;
+		delete i;
 	}
 
 	return (0);

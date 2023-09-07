@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 13:48:53 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/09/06 15:38:19 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/09/07 11:29:30 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(void)
 
 	diamondtrap.takeDamage(1);
 	diamondtrap.beRepaired(1);
+	diamondtrap.attack("target");
 	diamondtrap.highFivesGuys();
 	diamondtrap.guardGate();
 	diamondtrap.whoAmI();

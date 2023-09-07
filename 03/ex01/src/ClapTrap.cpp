@@ -1,16 +1,15 @@
 #include "../include/ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name)
-	: hitPoints(10), energyPoints(10), attackDamage(0)
+	: name(name), hitPoints(10), energyPoints(10), attackDamage(0)
 {
-	std::cout << "Default constructor called" << std::endl;
-	this->name = name;
+	std::cout << "ClapTrap: Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints,
 		int attackDamage)
 {
-	std::cout << "Custom constructor called" << std::endl;
+	std::cout << "ClapTrap: Custom constructor called" << std::endl;
 	this->name = name;
 	this->hitPoints = hitPoints;
 	this->energyPoints = energyPoints;
@@ -19,18 +18,18 @@ ClapTrap::ClapTrap(std::string name, int hitPoints, int energyPoints,
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap: Destructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &claptrap)
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap: Copy constructor called" << std::endl;
 	*this = claptrap;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap: Copy assignment operator called" << std::endl;
 	this->name = claptrap.name;
 	this->hitPoints = claptrap.hitPoints;
 	this->energyPoints = claptrap.energyPoints;
