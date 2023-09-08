@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 17:21:10 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/08/16 20:40:41 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/09/08 11:59:01 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ void Account::displayAccountsInfos(void)
 
 Account::Account(int initial_deposit)
 {
+	_nbAccounts++;
+	_accountIndex = _nbAccounts - 1;
 	_amount = initial_deposit;
 	_totalAmount += _amount;
 	_displayTimestamp();
@@ -61,8 +63,6 @@ Account::Account(int initial_deposit)
 }
 Account::~Account(void)
 {
-	_nbAccounts++;
-	_accountIndex = _nbAccounts - 1;
 	_displayTimestamp();
 	std::cout
 		<< "index:" << _accountIndex
@@ -80,8 +80,8 @@ void Account::makeDeposit(int deposit)
 	std::cout
 		<< "index:" << _accountIndex
 		<< ";p_amount:" << _amount
-		<< ";deposit:" << _nbDeposits
-		<< ";amount:" << _totalAmount
+		<< ";deposit:" << deposit
+		<< ";amount:" << _amount + deposit
 		<< ";nb_deposits:" << _nbDeposits
 		<< std::endl;
 	_amount += deposit;
@@ -98,8 +98,8 @@ bool Account::makeWithdrawal(int withdrawal)
 		std::cout
 			<< "index:" << _accountIndex
 			<< ";p_amount:" << _amount
-			<< ";withdrawal:" << _nbWithdrawals
-			<< ";amount:" << _totalAmount
+			<< ";withdrawal:" << withdrawal
+			<< ";amount:" << _amount - withdrawal
 			<< ";nb_withdrawals:" << _nbWithdrawals
 			<< std::endl;
 		_amount -= withdrawal;

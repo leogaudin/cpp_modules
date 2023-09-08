@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 16:21:42 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/08/17 15:03:11 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/09/08 11:53:23 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,23 +55,26 @@ void PhoneBook::add(void)
 
 void PhoneBook::get_contact_prompt(void)
 {
-	bool	valid_index;
-
 	std::string buffer;
-	valid_index = false;
-	while (!valid_index)
+
+	while (1)
 	{
 		std::cout << YELLOW "Enter the index of the contact you want to display: " RESET;
 		std::flush(std::cout);
 		std::getline(std::cin, buffer);
-		if (this->contacts[stoi(buffer)].empty() || stoi(buffer) < 0
-			|| stoi(buffer) > 7)
+		if (buffer.find_first_not_of("01234567") != std::string::npos
+			|| buffer.empty() || buffer.length() > 1)
 		{
 			std::cout << BOLD_RED "Invalid index, please choose one in the above list" RESET << std::endl;
 			continue ;
 		}
 		else
 		{
+			if (this->contacts[stoi(buffer)].empty())
+			{
+				std::cout << BOLD_RED "This contact doesn't exist, please choose one in the above list" RESET << std::endl;
+				continue ;
+			}
 			this->contacts[stoi(buffer)].print();
 			break;
 		}
