@@ -15,7 +15,7 @@ INCLUDE_DIR = include
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
 OBJ_FILES = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
 
-NAME = a.out
+NAME = btc
 
 .PHONY: all clean fclean re
 
